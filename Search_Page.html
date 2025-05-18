@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DEKA Search</title>
+  <style>
+    body {
+      background-color: #191919;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+    }
+
+    .logo {
+      margin-top: 40px;
+    }
+
+    .logo img {
+      width: 180px;
+      height: auto;
+    }
+
+    .title {
+      margin: 20px 0 30px;
+      font-size: 24px;
+      font-weight: 500;
+      color: #e0e0e0;
+      text-align: center;
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="text"] {
+      padding: 12px 20px;
+      font-size: 16px;
+      width: 300px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      margin-bottom: 20px;
+      background: #2a2a2a;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: 0 0 12px #be9b7b;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #be9b7b;
+      color: #191919;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d1b398;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="https://c.top4top.io/p_3425xcbhr1.png" alt="DEKA Logo">
+  </div>
+
+  <div class="title">Search for any product using the code</div>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Enter product code">
+    <button onclick="searchProduct()">Search</button>
+  </div>
+
+  <script>
+      window.location.href = finalURL;
+    function searchProduct() {
+      const query = document.getElementById("searchInput").value.trim();
+      if (query) {
+        const baseURL = "https://drive.google.com/drive/search?q=";
+        window.open(baseURL + encodeURIComponent(query), "_blank");
+      }
+    }
+  </script>
+
+</body>
+</html>
